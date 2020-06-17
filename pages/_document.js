@@ -1,6 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import styles from './styles'
 import Figure from 'components/figure'
+import Banner from './banner'
 
 class MyDocument extends Document {
   render() {
@@ -68,7 +69,7 @@ class MyDocument extends Document {
           </d-front-matter>
           <d-title>
             <Figure id="page-banner" banner>
-              <div style={{ height: 470 }} />
+              <Banner />
             </Figure>
           </d-title>
           <d-byline></d-byline>

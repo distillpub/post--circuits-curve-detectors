@@ -144,13 +144,11 @@ Nick Cammarata, an author of this paper, manually labelled over 800 images into 
 
 After hand-labeling these images, we compared our labels to <Neuron layer="mixed3b" neuron={379} /> activations across the same images. Using a stackplot we see that different labels separate cleanly into different activations<d-footnote>Interestingly, during labeling Nick felt it was often difficult to place samples into groups, as many images seemed to fall within the boundaries of the rubric. We were surprised when we saw that activations clearly separate into different levels of activation.</d-footnote>.
 
-import HumanLabels from './dataset/humanLabels'
+import HumanLabels from './dataset/dynamicHumanLabels'
 
 <HumanLabels 
   yAxisProps={{ label: "Proportion of Labels" }}
-  data={require('./data/human-ev.json')}>
-    Conditional probability of each group by 3b:379 activation across our hand-labelled dataset of around 850 images.
-  </HumanLabels>
+  data={require('./data/human-firstplot.json')}>Conditional probability of each group by 3b:379 activation across our hand-labelled dataset of around 850 images. We see that the different human labels separate into different ranges of activations.</HumanLabels>
 
 Still, there are many images that cause the neuron to activate but aren't classified as curves or imperfect curves. When we visualize attribution to <Neuron layer="mixed3b" neuron={379} /> we see that many of the images contain subtle curves. 
 
@@ -158,7 +156,7 @@ import FalsePositives from './dataset/falsePositives'
 
 <FalsePositives />
 
-Nick found it hard to detect subtle curves across hundreds of curve images because he started to experience the [Afterimage effect](https://en.wikipedia.org/wiki/Afterimage) that occurs when looking at one kind of stimulus for a long time. As a result, he found it hard to tell whether subtle curves were simply perceptual illusions. By visualizing attribution, we can reveal the curves that the neuron sees in the image, showing us curves that our labeling process missed. In these cases, it seems <Neuron layer="mixed3b" neuron={379} /> is a superhuman curve detector.
+Nick found it hard to detect subtle curves across hundreds of curve images because he started to experience the <a href="https://en.wikipedia.org/wiki/Afterimage">Afterimage effect</a> that occurs when looking at one kind of stimulus for a long time. As a result, he found it hard to tell whether subtle curves were simply perceptual illusions. By visualizing attribution, we can reveal the curves that the neuron sees in the image, showing us curves that our labeling process missed. In these cases, it seems <Neuron layer="mixed3b" neuron={379} /> is a superhuman curve detector.
 
 **How important are different points on the activation spectrum?**
 
@@ -183,9 +181,6 @@ An alternative measure for thinking about the importance of different parts of t
   data={require('./data/human-ev.json')}
   stackProps={{domain: { y: [0, 0.1] }}}>
 Contribution to the expected value of different activations, which shows how much each activation value influences the output of a neuron. Since curves are rare within the dataset, weak neuron activations contribute most to expected value.</HumanLabels>
-
-
-
 
 When we looked at probability density earlier, one might have been skeptical that <Neuron layer="mixed3b" neuron={379} /> was really a curve detector in a meaningful sense. Even if it's highly selective when it fires strongly, how can that be what matters when it isn't even visible on a probability density plot? Contribution to expected value shows us that even by a conservative measure, curves and imperfect curves form 55%. This seems consistent with the hypothesis that it really is a curve detector, and the other stimuli causing it to fire are labeling errors or cases where noisy images cause the neuron to misfire.
 

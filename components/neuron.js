@@ -3,8 +3,6 @@ import { Surface, Text, ZoomedImg } from 'components/ui'
 import { featureVis } from 'components/helpers'
 
 export default ({ model = 'inceptionv1', layer, neuron }) => {
-  if (typeof window === 'undefined') return null
-
   const layerText = layer.replace(/mixed/g, '')
 
   const url = `https://microscope.openai.com/models/${model}/${layer}_0/${neuron}`

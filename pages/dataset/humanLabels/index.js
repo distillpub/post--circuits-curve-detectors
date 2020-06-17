@@ -1,5 +1,6 @@
 import React from 'react'
-import Figure from 'components/figure'
+import dynamic from 'next/dynamic'
+
 import { Surface, Text } from 'components/ui'
 import { includes } from 'lodash'
 import cofab from 'pages/cofab'
@@ -12,6 +13,10 @@ import {
   VictoryGroup,
   VictoryStack,
 } from 'victory'
+
+export const getInitialProps = () => {
+  return {}
+}
 
 export default cofab(
   class HumanLabels extends React.Component {
@@ -46,9 +51,10 @@ export default cofab(
         },
         probChart = false,
       } = this.props
-      const isServer = typeof window === `undefined`
-      if (isServer) return null
-
+      if (typeof window === 'undefined') {
+        return null
+      }
+      const width = 1200
       const { activeGroups } = this.state
       const isGroupActive = (group) => includes(activeGroups, group)
       const hasActiveGroup = activeGroups.length > 0
@@ -109,121 +115,122 @@ export default cofab(
       )
 
       return (
-        <Figure>
-          <Surface gridColumn="screen" alignItems="center">
-            <Surface width={1200}>
+        <React.Fragment>
+          <Surface width={width} alignSelf="center">
+            <Surface
+              flexFlow="row"
+              justifyContent="space-between"
+              alignItems="center"
+            >
+              <Text size={600} marginLeft={60}>
+                {title}
+              </Text>
               <Surface
                 flexFlow="row"
+                marginRight={50}
                 justifyContent="space-between"
-                alignItems="center"
+                width={700}
+                alignSelf="flex-end"
+                zIndex={100}
               >
-                <Text size={600} marginLeft={60}>
-                  {title}
-                </Text>
-                <Surface
-                  flexFlow="row"
-                  marginRight={50}
-                  justifyContent="space-between"
-                  width={700}
-                  alignSelf="flex-end"
-                  zIndex={100}
-                >
-                  <Label index={3} name="Opposing Curve" count={102} />
-                  <Label index={2} name="Unrelated" count={379} />
-                  <Label index={1} name="Imperfect Curve" count={170} />
-                  <Label index={0} name="Curve" count={206} />
-                </Surface>
-              </Surface>
-              <Surface transform="translateY(-20px)">
-                <VictoryChart width={1200} height={400} {...stackProps}>
-                  <VictoryStack
-                    colorScale={colors}
-                    interpolation={interpolation}
-                    animate={{
-                      duration: 800,
-                    }}
-                  >
-                    {heights.map((label, index) => {
-                      const isZero = hasActiveGroup && !isGroupActive(index)
-                      const victoryData = bins
-                        .map((binValue, bin) => {
-                          let value =
-                            Math.abs(binValue) > 800
-                              ? null
-                              : {
-                                  x: binValue,
-                                  y: isZero ? 0 : label[bin],
-                                }
-
-                          // we multiply times a constant then divide to avoid numerical issues
-                          if (value && probChart) {
-                            value.y = value.y / 1000 / 1600
-                          }
-
-                          return value
-                        })
-                        .filter((i) => i !== null)
-
-                      const addInterpolation = interpolation
-                        ? { interpolation }
-                        : {}
-
-                      return (
-                        <VictoryGroup data={victoryData} key={index}>
-                          <VictoryArea
-                            {...addInterpolation}
-                            events={[
-                              {
-                                target: 'data',
-                                eventHandlers: {
-                                  onClick: () => {
-                                    this.onToggleGroup(index)
-                                  },
-                                },
-                              },
-                            ]}
-                          />
-                        </VictoryGroup>
-                      )
-                    })}
-                  </VictoryStack>
-                  <VictoryAxis
-                    crossAxis={false}
-                    tickCount={17}
-                    label="Activations"
-                  />
-
-                  <VictoryAxis
-                    axisLabelComponent={<VictoryLabel dy={-13} />}
-                    tickCount={5}
-                    offsetX={50}
-                    dependentAxis
-                    {...yAxisProps}
-                  />
-                  <VictoryLine
-                    style={{
-                      data: { strokeWidth: 1, stroke: 'rgba(0, 0, 0, 0.6)' },
-                    }}
-                    data={[
-                      { x: 0, y: 1 },
-                      { x: 0, y: 0 },
-                    ]}
-                  />
-                </VictoryChart>
+                <Label index={3} name="Opposing Curve" count={102} />
+                <Label index={2} name="Unrelated" count={379} />
+                <Label index={1} name="Imperfect Curve" count={170} />
+                <Label index={0} name="Curve" count={206} />
               </Surface>
             </Surface>
+          </Surface>
+          <Surface
+            width={width}
+            alignSelf="center"
+            transform="translateY(-20px)"
+          >
+            <VictoryChart width={width} height={400} {...stackProps}>
+              <VictoryStack
+                colorScale={colors}
+                interpolation={interpolation}
+                animate={{
+                  duration: 800,
+                }}
+              >
+                {heights.map((label, index) => {
+                  const isZero = hasActiveGroup && !isGroupActive(index)
+                  const victoryData = bins
+                    .map((binValue, bin) => {
+                      let value =
+                        Math.abs(binValue) > 800
+                          ? null
+                          : {
+                              x: binValue,
+                              y: isZero ? 0 : label[bin],
+                            }
+
+                      // we multiply times a constant then divide to avoid numerical issues
+                      if (value && probChart) {
+                        value.y = value.y / 1000 / 1600
+                      }
+
+                      return value
+                    })
+                    .filter((i) => i !== null)
+
+                  const addInterpolation = interpolation
+                    ? { interpolation }
+                    : {}
+
+                  return (
+                    <VictoryGroup data={victoryData} key={index}>
+                      <VictoryArea
+                        {...addInterpolation}
+                        events={[
+                          {
+                            target: 'data',
+                            eventHandlers: {
+                              onClick: () => {
+                                this.onToggleGroup(index)
+                              },
+                            },
+                          },
+                        ]}
+                      />
+                    </VictoryGroup>
+                  )
+                })}
+              </VictoryStack>
+              <VictoryAxis
+                crossAxis={false}
+                tickCount={17}
+                label="Activations"
+              />
+
+              <VictoryAxis
+                axisLabelComponent={<VictoryLabel dy={-13} />}
+                tickCount={5}
+                offsetX={50}
+                dependentAxis
+                {...yAxisProps}
+              />
+              <VictoryLine
+                style={{
+                  data: { strokeWidth: 1, stroke: 'rgba(0, 0, 0, 0.6)' },
+                }}
+                data={[
+                  { x: 0, y: 1 },
+                  { x: 0, y: 0 },
+                ]}
+              />
+            </VictoryChart>
           </Surface>
           <figcaption
             style={{
               width: 703,
               marginTop: -20,
-              alignSelf: 'flex-start',
-              marginLeft: 247,
+              alignSelf: 'center',
             }}
           >
             {children}
           </figcaption>
-        </Figure>
+        </React.Fragment>
       )
     }
   }
