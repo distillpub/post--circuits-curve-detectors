@@ -54,9 +54,11 @@ export default cofab(({ allActivations, icons }) => {
           overflow="hidden"
           border="1px solid rgba(0, 0, 0, 0.2)"
         >
-          {icons.map((icon) => (
-            <img src={icon} width={Math.floor(703 / icons.length)} />
-          ))}
+          {icons.map((icon) => {
+            const size = Math.floor(703 / icons.length)
+
+            return <img src={icon} width={size} height={size} />
+          })}
         </Surface>
         <figcaption style={{ width: 703, marginTop: 5 }}>
           Activations are normalized by the neuron's maximum activation. We'll
