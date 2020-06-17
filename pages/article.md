@@ -165,7 +165,8 @@ These charts are helpful for comparing our hand-labelled labels but they give an
 To see this, we can look at the probability density over activation magnitudes from all ImageNet examples, split into the same per-activation-magnitude (x-axis) ratio of classes as our hand labelled dataset.
 
 <HumanLabels 
-  data={require('./data/human-firstplot.json')}
+  probChart
+  data={require('./data/human-probabilities.json')}
 >While our hand-labelled dataset uniformly samples from activations, images of curves are rare within the dataset and 3b:379 activations follow an exponential distribution. In this plot we show 3b:379 activations split into the conditional probabilities of different groups at a given activation level within our hand-labelled dataset.</HumanLabels>
 
 From this perspective, we can't even see the cases where our neuron fires strongly! Probability density exponentially decays as we move right, and so these activations are rare. To some extent, this is what we should expect if these neurons really detect curves, since clear-cut curves rarely occur in images.
