@@ -1,0 +1,149 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="next-head-count" content="2"/><link rel="preload" href="/_next/static/Pko0E08puZRUjyKNE3pRS/pages/curveFamilies/radialLayer.js" as="script"/><link rel="preload" href="/_next/static/Pko0E08puZRUjyKNE3pRS/pages/_app.js" as="script"/><link rel="preload" href="/_next/static/runtime/webpack-b65cab0b00afd201cbda.js" as="script"/><link rel="preload" href="/_next/static/chunks/framework.4503cc20512dbab0b6d3.js" as="script"/><link rel="preload" href="/_next/static/chunks/b4c17a2ff6fe834b558016a6ee561bb0416cc8d5.86ba4ec94c9d13e37659.js" as="script"/><link rel="preload" href="/_next/static/runtime/main-41a8a9ebf69002259d75.js" as="script"/><link rel="preload" href="/_next/static/chunks/29107295.26ac171e1731cbbbea88.js" as="script"/><link rel="preload" href="/_next/static/chunks/6b8c1638b92ee380ab5407e7a8f5868633074581.23a9db16fe2e907844ed.js" as="script"/><link rel="preload" href="/_next/static/chunks/980b0acb80de69c815507f5cdaf4e92243fd6d1d.1ddb64304e10f8191c73.js" as="script"/></head><body><meta charSet="utf-8"/><meta name="viewport" content="width=1250"/><style>d-title {
+  padding-bottom: 0px !important;
+}
+
+b, i, em {
+  display: inline;
+}
+
+video::-webkit-media-controls-panel {
+  background-image: none !important;
+  filter: brightness(0.4);
+}
+
+d-article > p { display: inline-block; }
+
+      svg .model .node,
+      svg .model .background {
+        fill: hsla(213, 25%, 91%, 1);
+      }
+      svg .model .early .node,
+      svg .model .early .background {
+        fill: hsla(40, 70%, 90%, 1);
+      }
+      svg .model a .early > g > .node,
+      svg .model a .early .node[data-tf-op='Concat'],
+      svg .model a .early .background {
+        fill: hsla(40, 80%, 75%, 1);
+      }
+      svg .model a:hover .early > g > .node,
+      svg .model a:hover .early .node[data-tf-op='Concat'],
+      svg .model a:hover .early .background {
+        fill: hsla(40, 95%, 50%, 1);
+      }
+      svg .model .edge {
+        opacity: 0.85;
+      }
+      svg .model .background {
+        opacity: 0.6;
+      }
+      svg .model text {
+        opacity: 0.7;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Helvetica, Arial, sans-serif;
+        font-size: 13px;
+      }
+      svg .model .small-text {
+        font-size: 10px;
+        opacity: 0.5;
+      }
+
+      d-front-matter { 
+        display: none;
+      }
+
+      nav a {
+        border-bottom: none;
+      }
+
+      nav a:hover {
+        border-bottom: none;
+      }
+
+      .thread-info {
+        background-color: hsl(54, 78%, 96%);
+        border-left: solid hsl(54, 33%, 67%) 1px;
+        padding: 1em;
+        color: hsla(0, 0%, 0%, 0.67);
+      }
+  
+      #thread-nav {
+          margin-top: 20;
+          margin-bottom: 1.5rem;
+          display: grid;
+          grid-template-columns: 45px 3fr 2fr;
+          grid-template-areas:
+              "icon explanation explanation "
+              "icon prev next";
+          grid-column-gap: 1.5em;
+      }
+  
+      @media (min-width: 768px){
+        #thread-nav {
+          grid-template-columns: 65px 3fr 2fr;
+        }
+      }
+  
+      #thread-nav .icon {
+          grid-area: icon;
+          padding: 0.5em;
+          justify-self: center;
+      }
+  
+      #thread-nav .explanation {
+          grid-area: explanation;
+          font-size: 85%;
+          color: hsl(0, 0%, 0.33);
+      }
+  
+      #thread-nav .prev {
+          grid-area: prev;
+      }
+  
+      #thread-nav .prev::before {
+          content: "← Previous Article";
+      }
+  
+      #thread-nav .overview {
+          scroll-behavior: smooth;
+      }
+  
+      #thread-nav .overview::before {
+          content: "↑";
+          white-space: nowrap;
+          margin-right: 0.5em;
+      }
+  
+      #thread-nav .next {
+          grid-area: next;
+          scroll-behavior: smooth;
+      }
+  
+      #thread-nav .next::before {
+          content: "Next Article →";
+      }
+  
+      #thread-nav .next::before, #thread-nav .prev::before {
+        display: block;
+        white-space: nowrap;
+        padding: 0.5em 0;
+        font-size: 80%;
+        font-weight: bold;
+        margin-top: 0px;
+        margin-right: 0.5em;
+        text-transform: uppercase;
+      }
+  
+  
+  
+      #thread-nav .prev,
+      #thread-nav .next,
+      #thread-nav .overview {
+          font-size: 80%;
+          line-height: 1.5em;
+          font-weight: 600;
+          border-bottom: none;
+          color: #2e6db7;
+          /* margin-top: 0.25em; */
+          letter-spacing: 0.25px;
+      }</style><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css" integrity="sha384-BdGj8xC2eZkQaxoQ8nSLefg4AV4/AwB3Fj+8SUSo7pnKP6Eoy18liIKTPn9oBYNG" crossorigin="anonymous"/><d-front-matter><script type="text/json">{"title":"Curve Detectors","description":"Part one in a three part deep exploration into a neuron family.","authors":[{"author":"Nick Cammarata","authorURL":"http://nickcammarata.com","affiliation":"OpenAI","affiliationURL":"https://openai.com"},{"author":"Gabriel Goh","authorURL":"http://gabgoh.github.io","affiliation":"OpenAI","affiliationURL":"https://openai.com"},{"author":"Shan Carter","authorURL":"http://shancarter.com","affiliation":"OpenAI","affiliationURL":"https://openai.com"},{"author":"Ludwig Schubert","authorURL":"https://schubert.io/","affiliation":"OpenAI","affiliationURL":"https://openai.com"},{"author":"Michael Petrov","authorURL":"https://twitter.com/mpetrov","affiliation":"OpenAI","affiliationURL":"https://openai.com"},{"author":"Chris Olah","authorURL":"https://colah.github.io","affiliation":"OpenAI","affiliationURL":"https://openai.com"}]}</script></d-front-matter><d-title><div id="page-banner" style="display:flex;flex-flow:column;box-sizing:border-box;grid-column:screen;padding-top:20px;background:rgb(252, 252, 252);margin-top:40px;margin-bottom:0;padding-bottom:0;border-top:1px solid rgba(0, 0, 0, 0.1);border-bottom:"><div style="height:470px"></div></div></d-title><d-byline></d-byline><div id="__next"><div>loading</div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/curveFamilies/radialLayer","query":{},"buildId":"Pko0E08puZRUjyKNE3pRS","nextExport":true,"autoExport":true,"isFallback":false}</script><script nomodule="" src="/_next/static/runtime/polyfills-1dc1c9fbf3062957de60.js"></script><script async="" data-next-page="/curveFamilies/radialLayer" src="/_next/static/Pko0E08puZRUjyKNE3pRS/pages/curveFamilies/radialLayer.js"></script><script async="" data-next-page="/_app" src="/_next/static/Pko0E08puZRUjyKNE3pRS/pages/_app.js"></script><script src="/_next/static/runtime/webpack-b65cab0b00afd201cbda.js" async=""></script><script src="/_next/static/chunks/framework.4503cc20512dbab0b6d3.js" async=""></script><script src="/_next/static/chunks/b4c17a2ff6fe834b558016a6ee561bb0416cc8d5.86ba4ec94c9d13e37659.js" async=""></script><script src="/_next/static/runtime/main-41a8a9ebf69002259d75.js" async=""></script><script src="/_next/static/chunks/29107295.26ac171e1731cbbbea88.js" async=""></script><script src="/_next/static/chunks/6b8c1638b92ee380ab5407e7a8f5868633074581.23a9db16fe2e907844ed.js" async=""></script><script src="/_next/static/chunks/980b0acb80de69c815507f5cdaf4e92243fd6d1d.1ddb64304e10f8191c73.js" async=""></script><script src="/_next/static/Pko0E08puZRUjyKNE3pRS/_buildManifest.js" async=""></script><script src="/_next/static/Pko0E08puZRUjyKNE3pRS/_ssgManifest.js" async=""></script><d-bibliography src="/bibliography.bib"></d-bibliography><script src="https://distill.pub/template.v2.js"></script><d-appendix><d-footnote-list></d-footnote-list><d-citation-list></d-citation-list><h3>Author Contributions</h3><p>It’s often hard to separate scientific contributions by paper, as the ideas are usually developed before researchers decide where to draw the boundaries between publications. This is more pronounced in the threads format Circuits uses. We started writing a single paper on the curve family but later decided to split it into three publications grouped by neuron behavior, circuits, and model comparison. Although we’ve tried to isolate the contributions to Curve Detectors specifically, when the contributions were made we didn’t know we’d publish on these sub-topics of the curve family separately.</p><p><b>Interface Design &amp; Prototyping.</b> Many of the figures in this article started with early Colab prototypes from Chris in mid 2018, which Nick built upon and refined. Nick and Gabriel iterated together on crafting the “Smarter Curve Analysis” section.</p><p><b>Conceptual Contributions.</b> In mid 2018 Chris noticed that curves formed a family and started doing early prototypes of experiments that rendered their activations into tuning curves and synthetic activation maps. Nick and Chris iterated on these early experiments to understand curve neurons in more detail, finding properties like the combing effect. The radial tuning curve was suggested and implemented by Nick. Chris proposed hand-labeling dataset examples and Nick proposed rendering their attribution vectors to causally understand them. Nick made the connection to classical curve detection, and conceived of using attribution visualizations to do curve extraction and differential spline parameterization to do curve tracking. Gabriel created a practical differential spline parameterization and wrote the code powering the curve tracing experiments. The quilt of NMF factors used to show curve tracing was inspired by earlier unpublished work by Nick and Chris.</p><p><b>Writing.</b> Nick and Chris wrote the text of the article, with significant contributions from Gabe.</p><p><b>Infrastructure.</b> Nick built the infrastructure for extracting figures from the paper for reproduction in Colab. Ludwig is responsible for the distributed infrastructure that was used for many experiments, and helped with the alpha parameterizations that attribution uses.</p><h3>Acknowledgements</h3><p>Our article was greatly improved thanks to the detailed feedback by Vincent Tjeng, Nikita Obidin, Stefan Sietzen, Dave Vladman, Fred Hohman, Nick Moran, Sophia Sanborrn, Max Hodak, and Humza Iqbal.</p><p>We’d like to acknowledge Brice Menard, who encouraged us to study the statistics of neuron activations and provided more general comments as well. He was the first person we are aware of that realized that many neurons follow an exponential distribution.</p><p>We also really appreciate the conversations in the #circuits channel of the open <a href="http://slack.distill.pub/">Distill Slack</a>, which at the time of publishing contains more than 300 people.</p></d-appendix></body></html>
