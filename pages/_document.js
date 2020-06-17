@@ -8,7 +8,7 @@ class MyDocument extends Document {
     const byline = {
       title: 'Curve Detectors',
       description:
-        'Part one in a three part deep exploration into a neuron family.',
+        'Part one of a three part deep dive into the curve neuron family.',
       authors: [
         {
           author: 'Nick Cammarata',
