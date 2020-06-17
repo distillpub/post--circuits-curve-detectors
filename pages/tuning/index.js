@@ -63,7 +63,11 @@ export default class Tuning1 extends React.Component {
               ))}
             </Surface>
 
-            <img width={400} src={require('./tuning-transparent.png')} />
+            <img
+              width={400}
+              height={741}
+              src={require('./tuning-transparent.png')}
+            />
           </Surface>
         </Surface>
 

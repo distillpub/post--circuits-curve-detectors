@@ -23,8 +23,8 @@ export default () => (
         overflow="hidden"
         borderRadius={5}
       >
-        <img width={60} src={require('./curve2-img.png')} />
-        <img width={60} src={require('./curve2-attr.png')} />
+        <img width={60} height={60} src={require('./curve2-img.png')} />
+        <img width={60} height={60} src={require('./curve2-attr.png')} />
       </Surface>
       <Surface
         flexFlow="row"
@@ -32,8 +32,8 @@ export default () => (
         overflow="hidden"
         borderRadius={5}
       >
-        <img width={60} src={require('./curve3-img.png')} />
-        <img width={60} src={require('./curve3-attr.png')} />
+        <img width={60} height={60} src={require('./curve3-img.png')} />
+        <img width={60} height={60} src={require('./curve3-attr.png')} />
       </Surface>
     </Surface>
     <figcaption style={{ alignSelf: 'center', marginTop: 8, width: 600 }}>
