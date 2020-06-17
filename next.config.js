@@ -8,18 +8,16 @@ const withMDX = require('@next/mdx')({
     rehypePlugins: [rehypeKatex],
   },
 })
-const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
   devIndicators: {
     autoPrerender: false,
   },
-
-  // Use the CDN in production and localhost for development.
-  assetPrefix: isProd ? '/2020/circuits/curve-detectors' : '',
-  ...withImages(
-    withMDX({
+  ...withImages({
+    ...withMDX({
       pageExtensions: ['js', 'jsx', 'md', 'mdx'],
-    })
-  ),
+    }),
+    assetPrefix: '.',
+  }),
+  assetPrefix: '.',
 }
