@@ -138,7 +138,7 @@ class MyDocument extends Document {
             <p>
               Our article was greatly improved thanks to the detailed feedback
               by Vincent Tjeng, Nikita Obidin, Stefan Sietzen, Dave Vladman,
-              Fred Hohman, Nick Moran, Sophia Sanborrn, Max Hodak, and Humza
+              Fred Hohman, Nick Moran, Sophia Sanborn, Max Hodak, and Humza
               Iqbal.
             </p>
 
