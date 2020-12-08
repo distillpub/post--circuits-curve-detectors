@@ -74,7 +74,7 @@ What exactly are we claiming when we say these neurons detect curves? We think p
 
 <CurvesFeatureVis />
 
-Reading feature visualizations is a bit of a skill, and these images might feel disorienting if you haven't spent much time with them before. The most important thing to take away is the curve shape. You may also notice that there are bright, opposite hue colors on each side of the curve: this reflects a preference to see a chance in color at the boundary of the curve. Finally, if you look carefully, you will notice small lines perpendicular to the boundary of the curve. We call this weak preference for small perpendicular lines “combing" and will discuss it later. 
+Reading feature visualizations is a bit of a skill, and these images might feel disorienting if you haven't spent much time with them before. The most important thing to take away is the curve shape. You may also notice that there are bright, opposite hue colors on each side of the curve: this reflects a preference to see a change in color at the boundary of the curve. Finally, if you look carefully, you will notice small lines perpendicular to the boundary of the curve. We call this weak preference for small perpendicular lines “combing" and will discuss it later. 
 
 Every time we use feature visualization to make curve neurons fire as strongly as possible we get images of curves, even when we explicitly incentivize the creation of different kinds of images using a [diversity term](https://distill.pub/2017/feature-visualization/#diversity). This is strong evidence that curve detectors aren't polysemantic in the sense we usually use it, [roughly equally preferring](https://distill.pub/2020/circuits/zoom-in/#claim-1-polysemantic) different kinds of stimuli.
 

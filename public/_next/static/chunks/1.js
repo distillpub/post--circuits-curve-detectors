@@ -37,7 +37,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _temp,
-    _jsxFileName = "/Users/nick/code/circuits/curve-detector/pages/dataset/humanLabels/index.js";
+    _jsxFileName = "/Users/nick/code/post--circuits-curve-detectors/pages/dataset/humanLabels/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 

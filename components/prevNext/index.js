@@ -21,8 +21,8 @@ export default () => (
     <a className="prev" href="/2020/circuits/early-vision/">
       An Overview of Early Vision in InceptionV1
     </a>
-    <a className="next" style={{ opacity: 0.6 }}>
-      Curve Circuits (soon)
+    <a className="next" href="/2020/circuits/equivariance/">
+      Naturally Occurring Equivariance in Neural Networks
     </a>
   </section>
 )

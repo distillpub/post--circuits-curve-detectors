@@ -71,16 +71,16 @@ d-article > p { display: inline-block; }
           margin-top: 20;
           margin-bottom: 1.5rem;
           display: grid;
-          grid-template-columns: 45px 3fr 2fr;
+          grid-template-columns: 45px 2fr 2fr;
           grid-template-areas:
               "icon explanation explanation "
               "icon prev next";
-          grid-column-gap: 1.5em;
+          grid-column-gap: 1.2em;
       }
   
       @media (min-width: 768px){
         #thread-nav {
-          grid-template-columns: 65px 3fr 2fr;
+          grid-template-columns: 65px 2fr 2fr;
         }
       }
   
