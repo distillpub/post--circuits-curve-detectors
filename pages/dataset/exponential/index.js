@@ -30,7 +30,7 @@ export default () => (
           transform: 'translateX(-15px)',
         }}
         width={900}
-        src="http://storage.googleapis.com/clarity-public/circuits/curve-detectors/dataset-curves/exponential-pdf2.jpg"
+        src={require('./exponential-pdf2.jpg')}
       />
     </Surface>
     <figcaption>

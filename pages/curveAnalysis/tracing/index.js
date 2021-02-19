@@ -25,7 +25,7 @@ const Row = ({ name, header, children }) => (
         width={size}
         height={size}
         style={{ marginRight: 10 }}
-        src={`https://storage.cloud.google.com/clarity--curve-detectors/three_examples/${name}/source.png`}
+        src={`https://storage.cloud.google.com/distill-curve-detectors/three_examples/${name}/source.png`}
       />
 
       <video
@@ -33,8 +33,8 @@ const Row = ({ name, header, children }) => (
         height={size}
         controls
         style={{ marginLeft: 10 }}
-        poster={`https://storage.cloud.google.com/clarity--curve-detectors/three_examples/${name}/frame_99.png`}
-        src={`https://storage.cloud.google.com/clarity--curve-detectors/three_examples/${name}/movie_${name}.mp4`}
+        poster={`https://storage.cloud.google.com/distill-curve-detectors/three_examples/${name}/frame_99.png`}
+        src={`https://storage.cloud.google.com/distill-curve-detectors/three_examples/${name}/movie_${name}.mp4`}
       />
     </Surface>
     <figcaption
@@ -87,13 +87,13 @@ export default () => (
               <img
                 width={smallSize}
                 height={smallSize}
-                src={`https://storage.googleapis.com/clarity--curve-detectors/three_examples/crest${index}_v3/source.png`}
+                src={`https://storage.googleapis.com/distill-curve-detectors/three_examples/crest${index}_v3/source.png`}
               />
               {false && (
                 <img
                   width={smallSize}
                   height={smallSize}
-                  src={`https://storage.googleapis.com/clarity--curve-detectors/three_examples/crest${index}_v3/frame_99.png`}
+                  src={`https://storage.googleapis.com/distill-curve-detectors/three_examples/crest${index}_v3/frame_99.png`}
                 />
               )}
               <video
@@ -102,8 +102,8 @@ export default () => (
                 controls
                 autoPlay
                 mute
-                poster={`https://storage.cloud.google.com/clarity--curve-detectors/three_examples/crest${index}_v3/frame_99.png`}
-                src={`https://storage.googleapis.com/clarity--curve-detectors/three_examples/crest${index}_v3/movie_crest${index}_v3.mp4`}
+                poster={`https://storage.cloud.google.com/distill-curve-detectors/three_examples/crest${index}_v3/frame_99.png`}
+                src={`https://storage.googleapis.com/distill-curve-detectors/three_examples/crest${index}_v3/movie_crest${index}_v3.mp4`}
               />
             </Surface>
           )

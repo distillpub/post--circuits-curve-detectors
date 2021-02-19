@@ -24,7 +24,7 @@ export default () => (
         <Header>Source</Header>
         <img
           width={size}
-          src="https://storage.googleapis.com/clarity--curve-detectors/three_examples/butterfly_leaf/source.png"
+          src="https://storage.googleapis.com/distill-curve-detectors/three_examples/butterfly_leaf/source.png"
         />
       </Surface>
       <Surface marginX={5}>
@@ -33,8 +33,8 @@ export default () => (
           width={size}
           height={size}
           controls
-          poster="https://storage.googleapis.com/clarity--curve-detectors/three_examples/butterfly_leaf/frame_99.png"
-          src="https://storage.googleapis.com/clarity--curve-detectors/three_examples/butterfly_leaf/movie_butterfly_leaf.mp4"
+          poster="https://storage.googleapis.com/distill-curve-detectors/three_examples/butterfly_leaf/frame_99.png"
+          src="https://storage.googleapis.com/distill-curve-detectors/three_examples/butterfly_leaf/movie_butterfly_leaf.mp4"
         />
       </Surface>
       <Surface marginX={5}>
@@ -43,8 +43,8 @@ export default () => (
           width={size}
           height={size}
           controls
-          poster="https://storage.googleapis.com/clarity--curve-detectors/three_examples/butterfly/frame_99.png"
-          src="https://storage.googleapis.com/clarity--curve-detectors/three_examples/butterfly/movie_butterfly.mp4"
+          poster="https://storage.googleapis.com/distill-curve-detectors/three_examples/butterfly/frame_99.png"
+          src="https://storage.googleapis.com/distill-curve-detectors/three_examples/butterfly/movie_butterfly.mp4"
         />
       </Surface>
     </Surface>

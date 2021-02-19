@@ -27,7 +27,7 @@ export default () => (
                 muted
                 loop
                 autoPlay
-                src={`https://storage.googleapis.com/clarity--curve-detectors/butterfly_quilt_all_v3/10_5000000/${index}/movie_${index}.mp4`}
+                src={`https://storage.googleapis.com/distill-curve-detectors/butterfly_quilt_all_v3/10_5000000/${index}/movie_${index}.mp4`}
               />
             )
           })}

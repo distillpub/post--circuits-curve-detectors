@@ -94,7 +94,7 @@ export default class DatasetQuilt extends React.Component {
                   <Surface marginX={2}>
                     {range(count).map((index) => {
                       const indexWithPage = page * count + index
-                      const prefix = `https://storage.googleapis.com/clarity--curve-detectors/quilt/${value}/${indexWithPage}`
+                      const prefix = `https://storage.googleapis.com/distill-curve-detectors/quilt/${value}/${indexWithPage}`
 
                       return (
                         <Surface
