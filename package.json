@@ -14,7 +14,7 @@
     "d3-scale": "^3.2.1",
     "d3-scale-chromatic": "^1.5.0",
     "evergreen-ui": "^4.27.4",
-    "next": "9.3.5",
+    "next": "11.1.0",
     "next-images": "^1.4.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
